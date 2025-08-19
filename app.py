@@ -19,7 +19,7 @@ uploaded_file = st.file_uploader("Upload an X-ray image", type=["jpg", "png", "j
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
-    st.image(image, caption="Uploaded Image", use_column_width=True)
+    st.image(image, caption="Uploaded Image", use_container_width=True)
 
     processed_image = preprocess_image(image)
     prediction = model.predict(processed_image)
@@ -28,3 +28,4 @@ if uploaded_file is not None:
     st.subheader("Prediction:")
 
     st.write(predicted_class)
+
