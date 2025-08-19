@@ -5,7 +5,7 @@ from tensorflow.keras.models import load_model
 import json
 
 # Load model and class names
-model = load_model("/Users/muhammedrashid/Documents/codeme/interns/Fracture Detection/bone_break_classification_model.keras")
+model = load_model("bone_break_classification_model.keras")
 with open("class_names.json", "r") as f:
     class_names = json.load(f)
 
@@ -26,4 +26,5 @@ if uploaded_file is not None:
     predicted_class = class_names[np.argmax(prediction)]
 
     st.subheader("Prediction:")
+
     st.write(predicted_class)
